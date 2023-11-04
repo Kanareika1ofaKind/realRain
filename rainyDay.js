@@ -1557,3 +1557,19 @@ function playSound (url) {
   audio.volume = 0.25
   audio.play()
 }
+
+  function rain(){
+    const image = document.getElementById('background');
+    image.onload = function(){
+      let rainyDay = new RainyDay({ 
+        image: this, 
+        blur: 10,
+        fps: 40
+      })
+      RainyDay.rain([
+        [5,2,2]
+      ],0)
+    }
+    image.src = 'bg.jpeg';
+  }
+  rain();
